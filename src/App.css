@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+}
+body {
+  background-color: #fafafa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  object-fit: contain;
+  border-bottom: 1px solid lightgray;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__loginContainer {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app__headerImage {
+  height: 30px;
+  object-fit: contain;
+}
+.app__modal {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.app__posts {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app__postsRight {
+  margin-left: 20px;
+}
+.app__uploadPost {
+  width: 100%;
+  border-top: 1px solid lightgray;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+.uploadPost__header {
+  display: block;
+  text-align: center;
+}
+@media (max-width: 570px) {
+  .app__posts {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+  .app__postsRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+  .app__postsRight > * {
+    max-width: 326px;
   }
 }
