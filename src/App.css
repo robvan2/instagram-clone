@@ -15,6 +15,7 @@ body {
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .app__loginContainer {
   width: 150px;
@@ -22,7 +23,7 @@ body {
   justify-content: space-between;
 }
 .app__headerImage {
-  height: 30px;
+  height: 36px;
   object-fit: contain;
 }
 .app__modal {
@@ -30,6 +31,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.app__modal > * {
+  margin-top: 7px !important;
+  margin-bottom: 7px !important;
 }
 .app__posts {
   display: flex;

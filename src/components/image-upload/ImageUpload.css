@@ -10,10 +10,15 @@
   margin-right: auto;
   background-color: white;
   border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 .imageUpload > * {
   margin: 5px;
 }
 .imageUpload__progress {
   width: 100%;
+}
+.imageUpload__button {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
 }

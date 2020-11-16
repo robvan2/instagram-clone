@@ -1,4 +1,4 @@
-import { Button, Input, makeStyles, Modal } from '@material-ui/core';
+import { Button, Input, makeStyles, Modal, TextField } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import './App.css';
 import ImageUpload from './components/image-upload/ImageUpload';
@@ -76,7 +76,14 @@ function App() {
           displayName: username
         })
       })
-      .catch(error => alert(error.message));
+      .catch(error => {
+        alert(error.message);
+      })
+      .finally(() => {
+        setEmail('');
+        setPassword('');
+        setUsername('');
+      });
     setOpen(false);
   }
   const signIn = (event) => {
@@ -85,7 +92,11 @@ function App() {
       .then((authUser) => {
         setUsername(authUser.user.displayName);
       })
-      .catch(error => alert(error.message));
+      .catch(error => alert(error.message))
+      .finally(() => {
+        setEmail('');
+        setPassword('');
+      });
     setOpenLogin(false);
   }
   return (
@@ -130,19 +141,19 @@ function App() {
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1024px-Instagram_logo.svg.png"
                 alt="Instagram" />
             </center>
-            <Input
+            <TextField
               type="email"
-              placeholder="email@example.com"
+              label="Email"
               value={email}
               onChange={(e) => { setEmail(e.target.value) }}
             />
-            <Input
+            <TextField
               type="password"
-              placeholder="password"
+              label="Password"
               value={password}
               onChange={(e) => { setPassword(e.target.value) }}
             />
-            <Button onClick={signIn}>
+            <Button variant="contained" onClick={signIn}>
               Login
             </Button>
           </form>
